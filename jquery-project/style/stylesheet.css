@@ -1,0 +1,164 @@
+/* padding is space inside a container, margin is space outside a container */
+body {
+    padding: 0;
+    margin: 0;
+    background-image: url("../images/background.png");   /* padding area is shaded, margins are not */
+}
+        
+/* center content inside a container */
+aside {
+    background-color: #c71313;
+    text-align: center;
+    margin-top: 32em;
+    margin-bottom: 58em;
+    padding-top: 2em;
+    padding-bottom: 30px;
+}
+        
+/* float content inside a block element */
+figure {
+    float: right;
+    width: 10em;
+    margin-right: 0;
+    margin-top: 0;
+    margin-left: 0;
+    margin-bottom: 0;
+}
+figure img{
+    width: 100%;
+}
+
+header {
+    line-height: 0;
+}
+        
+/* remove bullet points and use CSS Flexbox to arrange the menu links in a row */
+nav ul {
+    background-color: #174ce3;
+    list-style-type: none;
+    padding-left: none;
+    display: flex;
+    flex-direction: row;            /* row or column */
+    flex-wrap: wrap;
+    justify-content: center;    /* horizontal alignment and spacing */
+    align-items: center;            /* vertical alignment and spacing */
+    width: 57.44em;
+}
+nav ul li {
+    background-color: #174ce3;
+    margin-right: 1em;
+    padding: 1em 1em;
+    font-family: "Arial";
+    font-size: 14pt;
+    color: #FFFFFF;     
+}
+
+article {
+    line-height: 1.2em;
+    padding-left: 1em;
+    padding-right: 1em;
+}
+
+img {
+    float: right;
+}
+
+footer {
+    font-family: "Arial";
+    font-size: 10pt;
+    color: #FFFFFF;
+    display: flex;
+    justify-content: center;
+}
+
+/* creates a fixed-width column centered in the browser window */
+#container {
+    margin-left: auto;
+    margin-right: auto;
+    min-width: 25rem;
+    max-width: 920px;
+    background-color: #00021f;
+    padding: 0;
+}
+        
+/* shades the sectioning elements, for demonstration purposes */
+/* you could add colors, margins, and padding to each sectioning element instead */
+#container > * {
+    background-color: #00021f;
+    margin: 1 em;
+    padding: 1 em;
+}
+
+/* code the layout using CSS grid - first, define the grid areas */
+#container > header  {grid-area: header;}
+#container > nav     {grid-area: nav;}
+#container > article {grid-area: article;}
+#container > aside   {grid-area: aside;}
+#container > footer  {grid-area: footer;}
+        
+#container {
+    display: grid;
+    grid-template-columns: 75% 25%;
+    grid-template-rows: auto;
+    grid-template-areas: 
+        "header header"     /* repeat grid area name to span across multiple columns */
+        "nav nav"
+        "article aside"
+        "footer footer"
+}
+        
+/* use media query are used to define alternative layout for mobile display */
+@media (max-width: 40em) {
+    #container {
+        display: grid;
+        grid-template-columns: 100%;
+        grid-template-rows: auto;
+        grid-template-areas: 
+            "header"
+            "nav"
+            "article"
+            "aside"
+            "footer"
+    }   
+}
+
+h1 {
+    font-family: "Roboto Condensed", sans-serif;
+    font-size: 24pt;
+    color: #FFFFFF;
+}
+
+h2 {
+    font-family: "Roboto Condensed", sans-serif;
+    font-size: 18pt;
+    color: #c71313;
+}
+
+h3 {
+    font-family: "Roboto Condensed", sans-serif;
+    font-size: 14pt;
+    color: #c71313
+}
+
+p {
+    font-family: "Arial";
+    font-size: 12pt;
+    color: #FFFFFF;
+}
+
+a:link {
+    font-family: "Arial";
+    font-size: 14pt;
+    color: #FFFFFF;
+}
+
+a:visited {
+    font-family: "Arial";
+    font-size: 14pt;
+    color: #FFFFFF;
+}
+
+ul {
+    padding: 0;
+    margin: 0;
+}
